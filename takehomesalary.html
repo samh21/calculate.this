@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>Take Home Salary Calculator</title>
+  </head>
+  <body>
+    <main-header></main-header>
+    <div class="container p-3">
+      <div
+        class="card m-auto shadow mb-5 bg-white rounded"
+        style="max-width: 500px; min-width: 320px;"
+      >
+        <img class="card-img" src="./img/money65.jpg" alt="Card image" />
+        <div class="card-img-overlay text-light strong">
+          <h1 class="text-center">
+            Take Home Salary Calculator
+          </h1>
+        </div>
+
+        <div class="mx-auto w-75 py-3">
+          <form>
+            <div class="form-group">
+              <label for="salary"
+                >Enter a Salary to see breakdown of dedcutions</label
+              >
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">$</div>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="salary"
+                  placeholder="Salary"
+                />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-sm btn-secondary btn-block">
+              Submit
+            </button>
+          </form>
+          <div class="py-3">
+            <small>
+              Results displayed are rates for the 2020 / 2021 tax year and
+              assume you have a standard personal allowance of £12,500. Income
+              tax bands are different if you live in Scotland.
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

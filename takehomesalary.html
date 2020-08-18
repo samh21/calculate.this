@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./takeHomeSalary.css" /> -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -16,50 +17,115 @@
     <div class="container p-3">
       <div
         class="card m-auto shadow mb-5 bg-white rounded"
-        style="max-width: 500px; min-width: 320px;"
+        style="max-width: 550px; min-width: 320px;"
       >
-        <img class="card-img" src="./img/money65.jpg" alt="Card image" />
-        <div class="card-img-overlay text-light strong">
-          <h1 class="text-center">
-            Take Home Salary Calculator
-          </h1>
+        <div class="card overflow-hidden border-0 rounded-0 text-center">
+          <img src="./img/money65.jpg" class="card-img rounded-0" alt="..." />
+          <div
+            class="card-img-overlay d-flex flex-column justify-content-center"
+          >
+            <h1 class="card-title text-uppercase text-light">
+              Take Home Salary Calculator
+            </h1>
+          </div>
         </div>
 
-        <div class="mx-auto w-75 py-3">
-          <form>
+        <div class="mx-auto p-4">
+          <form id="salary-form">
             <div class="form-group">
               <label for="salary"
                 >Enter a Salary to see breakdown of dedcutions</label
               >
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
-                  <div class="input-group-text">$</div>
+                  <div class="input-group-text">£</div>
                 </div>
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="salary"
                   placeholder="Salary"
                 />
               </div>
+              <input type="submit" class="btn btn-sm btn-secondary btn-block" />
             </div>
-
-            <button type="submit" class="btn btn-sm btn-secondary btn-block">
-              Submit
-            </button>
           </form>
           <div class="py-3">
             <small>
-              Results displayed are rates for the 2020 / 2021 tax year and
-              assume you have a standard personal allowance of £12,500. Income
-              tax bands are different if you live in Scotland.
+              Results shown are rates for the 2020 / 2021 tax year and assume
+              you have a standard personal allowance of £12,500. Income tax
+              bands are different if you live in Scotland.
             </small>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div
+              id="spinner"
+              class="spinner-border text-secondary"
+              role="status"
+              style="display: none;"
+            >
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+          <div id="results" class="py-3" style="display: none;">
+            <table
+              class="table table-sm table-striped"
+              style="font-size: 0.7em;"
+            >
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Yearly</th>
+                  <th scope="col">Monthly</th>
+                  <th scope="col">Weekly</th>
+                  <th scope="col">Daily</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="gross-income">
+                  <td>Gross Income</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="taxable-income">
+                  <td>Taxable Income</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="tax">
+                  <td>Tax</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="national-insurance">
+                  <td>National Insurance</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="font-weight-bold" id="take-home">
+                  <td>Take Home</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="header.js"></script>
+    <script src="takeHomeSalary.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

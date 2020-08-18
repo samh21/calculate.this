@@ -6,7 +6,7 @@ class Header extends HTMLElement {
 "
     >
       <a class="navbar-brand" href="/">
-        <h3>Calculator Utilities</h3>
+        <h3>Calculate.This</h3>
       </a>  
       <button
         class="navbar-toggler"

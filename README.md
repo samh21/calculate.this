@@ -4,7 +4,9 @@
 
 The goal is to get developers working as part of a team, with code they have not written along with gaining experience of version control, more specifically making forks and raising pull requests.
 
-We invite you to design a simple utility calculator, and implement as a new page within the site. There is an endless list of options to choose from
+We invite you to design a simple utility calculator, and implement as a new page within the site. There is an endless list of options to choose from.
+
+---
 
 ## Contribute
 

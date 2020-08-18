@@ -10,9 +10,6 @@ const ADDITIONAL_RATE = { RATE: 0.45 };
 const NI_BASE = { VALUE: 9500, RATE: 0.12 };
 const NI_UPPER = { VALUE: 50000, RATE: 0.02 };
 
-const grossIncome = document.getElementById('gross-income').children;
-const taxableIncome = document.getElementById('taxable-income');
-
 let salary;
 
 // Currency formatter.
@@ -22,9 +19,6 @@ let currency = new Intl.NumberFormat('en-UK', {
   minimumFractionDigits: 0,
   maximumFractionDigits: 0,
 });
-
-// var amount = document.getElementById('input').innerHTML;
-// document.getElementById('result').innerHTML = formatter.format(amount);
 
 // Form event listener
 document.getElementById('salary-form').addEventListener('submit', handleSubmit);
@@ -168,9 +162,10 @@ function updateDOM(element, array) {
   }
 }
 
+// Show error if no value entered
+
 function displayError() {
   const alert = document.createElement('div');
-
   alert.className = 'alert alert-danger py-1 mt-2';
   alert.id = 'alert';
   alert.appendChild(document.createTextNode('Please enter a salary'));

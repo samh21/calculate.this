@@ -27,12 +27,12 @@ function checkValuesInRange(initBal, intRate, calcPeriod){
         return false;
     }
 
-    if(initBal >= 0 && intRate >= 0 && calcPeriod > 0){
-        return true;
+    if(initBal < 0 || intRate < 0 || calcPeriod < 0){
+        displayError();
+        return false;
     }
 
-    displayError();
-    return false;
+    return true;
 }
 
 //calculates compound interest, returns a table of results

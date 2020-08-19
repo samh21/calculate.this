@@ -4,7 +4,9 @@
 
 The goal is to get developers working as part of a team, with code they have not written along with gaining experience of version control, more specifically making forks and raising pull requests.
 
-We invite you to design a simple utility calculator, and implement as a new page within the site. There is an endless list of options to choose from
+We invite you to design a simple utility calculator, and implement as a new page within the site. There is an endless list of options to choose from.
+
+---
 
 ## Contribute
 
@@ -34,7 +36,7 @@ Or
 
 - What files do I need to add?
 
-  - You should only need to add to files.
+  - You should only need to add two files.
     First, make a copy of `template.html` and rename to the function of your caclulator. e.g. `mortgagecalculator.html`
   - You will also need a file for your Javascript. Link to this file in your html file.
 

@@ -49,3 +49,19 @@ I am willing to help as much as possible. If you have any questions, feel free t
 
 - email: sam_henderson04@yahoo.co.uk
 - Twitter <a href="http://twitter.com/sam_henderson44" target="_blank">`@sam_henderson44`</a>
+
+---
+
+## Live Site
+
+https://thisdotcalculate.netlify.app
+
+---
+
+## Contributors
+
+<a href="https://github.com/samh21/calculate.this/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=samh21/calculate.this" />
+</a>
+
+Made with [contributors-img](https://contributors-img.web.app).

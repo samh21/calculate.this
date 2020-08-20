@@ -6,6 +6,7 @@ document.getElementById("calculator-form").addEventListener("submit", handleSubm
 function handleSubmit(e) {
     e.preventDefault();
 
+    // clear old results
     removeTable();
     
     // get the values of all the form fields

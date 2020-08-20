@@ -18,11 +18,14 @@
     <main-header></main-header>
 
     <div class="container p-3">
-      <div class="card m-auto shadow bg-white rounded mb-5"
+      <div class="card m-auto shadow bg-white rounded mb-5 d-flex align-items-center"
            style="max-width: 550px; min-width: 320px;">
         <div class="card overflow-hidden border-0 rounded-0 text-center">
-          <img src="./img/money65.jpg" class="card-img rounded-0" alt="...">
-          <div class="card-img-overlay d-flex align-items-center justify-content-center">
+          <img src="./img/money-tree.jpg" 
+               style="width: 550px; height: 30vh;";
+               class="card-img rounded-0" alt="...">
+          <div class="card-img-overlay d-flex align-items-center justify-content-center"
+               style="background-color: rgba(0,0,0,0.5);">
             <h1 class="card-title text-uppercase text-light">Compound Interest Calculator</h1>
           </div>
         </div>
@@ -58,6 +61,11 @@
               <input type="submit" class="btn btn-block btn-secondary" value="Submit">
             </div>
           </form>
+        </div>
+        <div id="spinner" class="spinner-border text-secondary"
+             style="visibility: hidden;"
+             role="status">
+          <span class="sr-only">Loading...</span>
         </div>
         <div id="results" class="mx-3">
           <table class="table table-sm table-striped" style="visibility: hidden;">

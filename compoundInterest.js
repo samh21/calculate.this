@@ -5,6 +5,9 @@ document.getElementById("calculator-form").addEventListener("submit", handleSubm
 // event handler for form submit
 function handleSubmit(e) {
     e.preventDefault();
+
+    // clear old results
+    removeTable();
     
     // get the values of all the form fields
     let initialBalance = document.getElementById("initial-balance").value;
@@ -14,7 +17,8 @@ function handleSubmit(e) {
     // check for errors in values
     if(checkValuesInRange(initialBalance, interestRate, calculationPeriod)){
         let results = calculateInterest(initialBalance, interestRate, calculationPeriod);
-        displayResults(results);
+        document.getElementById("spinner").style.visibility = "visible";
+        setTimeout(displayResults, 1500, results);
         console.log(results);
     }
     
@@ -64,8 +68,7 @@ function calculateInterest(initBal, intRate, calcPeriod){
 // displays the results on the webpage
 function displayResults(results){
 
-    removeTable();
-
+    document.getElementById("spinner").style.visibility = "hidden";
     for(let i=0;i<results.year.length;i++){
         const row = document.createElement("tr");
         const cols = [];
@@ -110,4 +113,6 @@ function removeTable() {
     newTable.style = "text-align: center;";
 
     document.querySelector("table").appendChild(newTable);
+
+    document.querySelector("table").style.visibility = "hidden";
 }

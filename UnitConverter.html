@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>
+      <!-- Your calculator title goes here -->
+    </title>
+    <style>
+      .number{
+    text-align: right;
+  }
+  .success{
+    color: gold;
+    font-size: 15px;
+  }
+  .main{
+    font-family: monospace;
+    
+  }
+  select{
+    max-width: 200px;
+  }
+  input{
+    max-width: 200px;
+    text-align: right;
+  }
+  h1, h5, h6{
+    text-align: center;
+  }
+  #temperature{
+    background: rosybrown;
+    padding: 5px;
+    padding-left: 50px;
+  }
+  #area{
+    background: darkcyan;
+    padding: 5px;
+    padding-left: 50px;
+  }
+  #length{
+    background: chocolate;
+    padding: 5px;
+    padding-left: 50px;
+  }
+  #volume{
+    background: cornflowerblue;
+    padding: 5px;
+    padding-left: 50px;
+  }
+  #mass{
+    background: darkgreen;
+    padding: 5px;
+    padding-left: 50px;
+  }
+  #data{
+    background: darkorchid;
+    padding: 5px;
+    padding-left: 50px;
+  }
+  .cell{
+    margin: 5px;
+    border-radius: 11px;
+  }
+  #center{
+    padding-right: 50px;
+  }
+  hr{
+   background: turquoise;
+  }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <main-header></main-header>
+
+    <!-- 
+
+  Markup for your caculator app goes here. Please use Bootstrap 5 alpa.
+  
+
+ -->
+ <div class="main container">
+  <h1>Unit Converters</h1>
+  <h6 class="text-muted">Default: 3 decimal points</h6>
+  <p class="form-inline">
+    <select name="point" id="point" class="form-control mr-3">
+      <option value="0">0 d.p</option>
+      <option value="1">1 d.p</option>
+      <option value="2">2 d.p</option>
+      <option value="3" selected>3 d.p</option>
+      <option value="4">4 d.p</option>
+      <option value="5">5 d.p</option>
+      <option value="6">6 d.p</option>
+      <option value="7">7 d.p</option>
+      <option value="8">8 d.p</option>
+      <option value="9">9 d.p</option>
+      <option value="10">10 d.p</option>
+    </select> <span class="success mr-1 text-muted">Change:</span>
+    <span id="empty" class="mr-1"></span>d.p
+  </p>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div id="temperature" class="cell">
+        <h5 id="center">Temperature</h5>
+        <form class="form-inline">
+          <select name="temperature" id="temperature1" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="celsius">Celsius (&deg;C)</option>
+            <option value="fahrenheit">Fahrenheit (&deg;F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+          </select>
+          <input class="form-control mr-1" type="tel" name="number1" id="number1" class="number" value="1" maxlength="6"><span id="temp1" class="success"></span>
+          </form>
+        <br>
+        <form class="form-inline">
+          <select name="temperature" id="temperature2" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="celsius">Celsius (&deg;C)</option>
+            <option value="fahrenheit">Fahrenheit (&deg;F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+          </select>
+          <input class="form-control mr-1" type="number" name="number2" id="number2" class="number" value="1" disabled><span id="temp2" class="success"></span>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div id="area" class="cell">
+        <h5 id="center">Area</h5>
+        <form class="form-inline">
+          <select name="area" id="area1" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="ac">Acre (Ac)</option>
+            <option value="a">Are (a)</option>
+            <option value="ha">Hectare (ha)</option>
+            <option value="cm">Square centimetre (cm&sup2;)</option>
+            <option value="ft">Square foot (ft&sup2;)</option>
+            <option value="in">Square inch (in&sup2;)</option>
+            <option value="m">Square metre (m&sup2;)</option>
+          </select>
+          <input class="form-control mr-1" type="tel" name="number3" id="number3" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)"><span id="a1" class="success"></span>
+        </form>
+        <br>
+        <form class="form-inline">
+          <select name="area" id="area2" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="ac">Acre (Ac)</option>
+            <option value="a">Are (a)</option>
+            <option value="ha">Hectare (ha)</option>
+            <option value="cm">Square centimetre (cm&sup2;)</option>
+            <option value="ft">Square foot (ft&sup2;)</option>
+            <option value="in">Square inch (in&sup2;)</option>
+            <option value="m">Square metre (m&sup2;)</option>
+          </select>
+          <input class="form-control mr-1" type="number" name="number4" id="number4" class="number" value="1" disabled min="0"><span id="a2" class="success"></span>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div id="length" class="cell">
+        <h5 id="center">Length</h5>
+        <form class="form-inline">
+          <select name="length" id="length1" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="mm">Millimetre (mm)</option>
+            <option value="cm">Centimetre (cm)</option>
+            <option value="km">Kilometre (km)</option>
+            <option value="in">Inch (in)</option>
+            <option value="ft">Foot (ft)</option>
+            <option value="yd">Yard (yd)</option>
+            <option value="mi">Mile (mi)</option>
+            <option value="NM">Nautical mile (NM)</option>
+            <option value="mil">Mil (mil)</option>
+          </select>
+          <input class="form-control mr-1" type="tel" name="number5" id="number5" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)"><span id="l1" class="success"></span>
+        </form>
+        <br>
+        <form class="form-inline">
+          <select name="length" id="length2" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="mm">Millimetre (mm)</option>
+            <option value="cm">Centimetre (cm)</option>
+            <option value="km">Kilometre (km)</option>
+            <option value="in">Inch (in)</option>
+            <option value="ft">Foot (ft)</option>
+            <option value="yd">Yard (yd)</option>
+            <option value="mi">Mile (mi)</option>
+            <option value="NM">Nautical mile (NM)</option>
+            <option value="mil">Mil (mil)</option>
+          </select>
+          <input class="form-control mr-1" type="number" name="number6" id="number6" class="number" value="1" disabled min="0"><span id="l2" class="success"></span>
+        </form>
+      </div>
+    </div><div class="col-sm-12 col-md-6">
+      <div id="volume" class="cell">
+        <h5 id="center">Volume</h5>
+        <form class="form-inline">
+          <select name="volume" id="volume1" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="galUS">Gallon (US)</option>
+            <option value="galUK">Gallon (UK)</option>
+            <option value="l">Litre (l)</option>
+            <option value="ml">Millilitre (ml)</option>
+            <option value="cc">Cubic centimetre (cc) (cm&sup3;)</option>
+            <option value="m">Cubic metre (m&sup3;)</option>
+            <option value="in">Cubic inch (in&sup3;)</option>
+            <option value="ft">Cubic foot (ft&sup3;)</option>
+          </select>
+          <input class="form-control mr-1" type="tel" name="number7" id="number7" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)"><span id="v1" class="success"></span>
+        </form>
+        <br>
+        <form class="form-inline">
+          <select name="volume" id="volume2" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="galUS">Gallon (US)</option>
+            <option value="galUK">Gallon (UK)</option>
+            <option value="l">Litre (l)</option>
+            <option value="ml">Millilitre (ml)</option>
+            <option value="cc">Cubic centimetre (cc) (cm&sup3;)</option>
+            <option value="m">Cubic metre (m&sup3;)</option>
+            <option value="in">Cubic inch (in&sup3;)</option>
+            <option value="ft">Cubic foot (ft&sup3;)</option>
+          </select>
+          <input class="form-control mr-1" type="number" name="number8" id="number8" class="number" value="1" disabled min="0"><span id="v2" class="success"></span>
+        </form>
+      </div>
+      
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div id="mass" class="cell">
+        <h5 id="center">Mass</h5>
+        <form class="form-inline">
+          <select name="mass" id="mass1" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="t">Ton (t)</option>
+            <option value="tUK">Ton (UK)</option>
+            <option value="tUS">Ton (US)</option>
+            <option value="lb">Pound (lb)</option>
+            <option value="oz">Ounce (oz)</option>
+            <option value="kg">Kilogram (kg)</option>
+            <option value="g">Gram (g)</option>
+          </select>
+          <input class="form-control mr-1" type="tel" name="number9" id="number9" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)"><span id="m1" class="success"></span>
+        </form>
+        <br>
+        <form class="form-inline">
+          <select name="mass" id="mass2" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="t">Ton (t)</option>
+            <option value="tUK">Ton (UK)</option>
+            <option value="tUS">Ton (US)</option>
+            <option value="lb">Pound (lb)</option>
+            <option value="oz">Ounce (oz)</option>
+            <option value="kg">Kilogram (kg)</option>
+            <option value="g">Gram (g)</option>
+          </select>
+          <input class="form-control mr-1" type="number" name="number10" id="number10" class="number" value="1" disabled min="0"><span id="m2" class="success"></span>
+        </form>
+      </div>
+      
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div id="data" class="cell">
+        <h5 id="center">Data</h5>
+        <form class="form-inline">
+          <select name="data" id="data1" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="bit">Bit (bit)</option>
+            <option value="b">Byte (B)</option>
+            <option value="kb">Kilobyte (kB)</option>
+            <option value="mb">Megabyte (MB)</option>
+            <option value="gb">Gigabyte (GB)</option>
+            <option value="tb">Terabyte (TB)</option>
+          </select>
+          <input class="form-control mr-1" type="tel" name="number11" id="number11" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)"><span id="d1" class="success"></span>
+        </form>
+        <br>
+        <form class="form-inline">
+          <select name="data" id="data2" class="form-control mr-3">
+            <option value="">Select -</option>
+            <option value="bit">Bit (bit)</option>
+            <option value="b">Byte (B)</option>
+            <option value="kb">Kilobyte (kB)</option>
+            <option value="mb">Megabyte (MB)</option>
+            <option value="gb">Gigabyte (GB)</option>
+            <option value="tb">Terabyte (TB)</option>
+          </select>
+          <input class="form-control mr-1" type="number" name="number12" id="number12" class="number" value="1" disabled min="0"><span id="d2" class="success"></span>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <hr>
+  <hr>
+  <hr>
+  <hr>
+  <p class="text-center text-muted">Use Your Code For Good</p>
+  
+</div>
+
+    <!-- link to header.js (navbar). Do not remove -->
+    <script src="header.js"></script>
+
+    <!-- link to your app js file -->
+    <script src="./UnitConverter.js"></script>
+
+    <!-- bootstrap dependencies -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

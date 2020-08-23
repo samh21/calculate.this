@@ -52,17 +52,17 @@
   #volume{
     background: cornflowerblue;
     padding: 5px;
-    padding-left: 50px;
+    padding-left: 40px;
   }
   #mass{
     background: darkgreen;
     padding: 5px;
-    padding-left: 50px;
+    padding-left: 70px;
   }
   #data{
     background: darkorchid;
     padding: 5px;
-    padding-left: 50px;
+    padding-left: 70px;
   }
   .cell{
     margin: 5px;
@@ -117,7 +117,7 @@
             <option value="fahrenheit">Fahrenheit (&deg;F)</option>
             <option value="kelvin">Kelvin (K)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number1" id="number1" class="number" value="1" maxlength="6"><span id="temp1" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number1" id="number1" class="number" value="1" maxlength="6" onkeypress="if(this.value.length==8) return false;"><span id="temp1" class="success"></span>
           </form>
         <br>
         <form class="form-inline">
@@ -127,7 +127,7 @@
             <option value="fahrenheit">Fahrenheit (&deg;F)</option>
             <option value="kelvin">Kelvin (K)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number2" id="number2" class="number" value="1" disabled><span id="temp2" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number2" id="number2" class="number" value="1" disabled><span id="temp2" class="success"></span>
         </form>
       </div>
     </div>
@@ -145,7 +145,7 @@
             <option value="in">Square inch (in&sup2;)</option>
             <option value="m">Square metre (m&sup2;)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number3" id="number3" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)"><span id="a1" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number3" id="number3" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)" onkeypress="if(this.value.length==8) return false;"><span id="a1" class="success"></span>
         </form>
         <br>
         <form class="form-inline">
@@ -159,7 +159,7 @@
             <option value="in">Square inch (in&sup2;)</option>
             <option value="m">Square metre (m&sup2;)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number4" id="number4" class="number" value="1" disabled min="0"><span id="a2" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number4" id="number4" class="number" value="1" disabled min="0"><span id="a2" class="success"></span>
         </form>
       </div>
     </div>
@@ -179,7 +179,7 @@
             <option value="NM">Nautical mile (NM)</option>
             <option value="mil">Mil (mil)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number5" id="number5" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)"><span id="l1" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number5" id="number5" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)" onkeypress="if(this.value.length==8) return false;"><span id="l1" class="success"></span>
         </form>
         <br>
         <form class="form-inline">
@@ -195,7 +195,7 @@
             <option value="NM">Nautical mile (NM)</option>
             <option value="mil">Mil (mil)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number6" id="number6" class="number" value="1" disabled min="0"><span id="l2" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number6" id="number6" class="number" value="1" disabled min="0"><span id="l2" class="success"></span>
         </form>
       </div>
     </div><div class="col-sm-12 col-md-6">
@@ -213,7 +213,7 @@
             <option value="in">Cubic inch (in&sup3;)</option>
             <option value="ft">Cubic foot (ft&sup3;)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number7" id="number7" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)"><span id="v1" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number7" id="number7" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)" onkeypress="if(this.value.length==8) return false;"><span id="v1" class="success"></span>
         </form>
         <br>
         <form class="form-inline">
@@ -228,7 +228,7 @@
             <option value="in">Cubic inch (in&sup3;)</option>
             <option value="ft">Cubic foot (ft&sup3;)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number8" id="number8" class="number" value="1" disabled min="0"><span id="v2" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number8" id="number8" class="number" value="1" disabled min="0"><span id="v2" class="success"></span>
         </form>
       </div>
       
@@ -247,7 +247,7 @@
             <option value="kg">Kilogram (kg)</option>
             <option value="g">Gram (g)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number9" id="number9" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)"><span id="m1" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number9" id="number9" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)" onkeypress="if(this.value.length==8) return false;"><span id="m1" class="success"></span>
         </form>
         <br>
         <form class="form-inline">
@@ -261,7 +261,7 @@
             <option value="kg">Kilogram (kg)</option>
             <option value="g">Gram (g)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number10" id="number10" class="number" value="1" disabled min="0"><span id="m2" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number10" id="number10" class="number" value="1" disabled min="0"><span id="m2" class="success"></span>
         </form>
       </div>
       
@@ -279,7 +279,7 @@
             <option value="gb">Gigabyte (GB)</option>
             <option value="tb">Terabyte (TB)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number11" id="number11" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)"><span id="d1" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number11" id="number11" class="number" value="1" maxlength="6" oninput="this.value = Math.abs(this.value)" onkeypress="if(this.value.length==8) return false;"><span id="d1" class="success"></span>
         </form>
         <br>
         <form class="form-inline">
@@ -292,7 +292,7 @@
             <option value="gb">Gigabyte (GB)</option>
             <option value="tb">Terabyte (TB)</option>
           </select>
-          <input class="form-control mr-1" type="tel" name="number12" id="number12" class="number" value="1" disabled min="0"><span id="d2" class="success"></span>
+          <input class="form-control mr-1" type="number" name="number12" id="number12" class="number" value="1" disabled min="0"><span id="d2" class="success"></span>
         </form>
       </div>
     </div>

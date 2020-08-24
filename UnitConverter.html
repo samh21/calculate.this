@@ -10,25 +10,24 @@
       crossorigin="anonymous"
     />
     <title>
-      <!-- Your calculator title goes here -->
+      Unit Converters
     </title>
     <style>
-      .number{
-    text-align: right;
-  }
   .success{
     color: gold;
-    font-size: 15px;
+    font-size: 10px;
   }
   .main{
-    font-family: monospace;
-    
+    max-width: 480px;
+    border: 1px solid tomato;
+    border-radius: 17px;
   }
   select{
-    max-width: 200px;
+    width: 190px !important;
   }
+
   input{
-    max-width: 200px;
+    width: 190px !important;
     text-align: right;
   }
   h1, h5, h6{
@@ -36,45 +35,71 @@
   }
   #temperature{
     background: rosybrown;
-    padding: 5px;
-    padding-left: 50px;
-  }
+    display: none;
+ }
   #area{
     background: darkcyan;
-    padding: 5px;
-    padding-left: 50px;
   }
   #length{
     background: chocolate;
-    padding: 5px;
-    padding-left: 50px;
+    display: none;
   }
   #volume{
     background: cornflowerblue;
-    padding: 5px;
-    padding-left: 40px;
+    display: none;
   }
   #mass{
     background: darkgreen;
-    padding: 5px;
-    padding-left: 70px;
+    display: none;
   }
   #data{
     background: darkorchid;
-    padding: 5px;
-    padding-left: 70px;
-  }
+    display: none;
+   }
   .cell{
-    margin: 5px;
-    border-radius: 11px;
+    position: relative;
+    top: -24px;
+    max-width: 500px;
+    padding: 7px;
+    
   }
-  #center{
+  /* #center{
     padding-right: 50px;
-  }
+  } */
   hr{
-   background: turquoise;
+   background: tan;
   }
-    </style>
+  div.scrollmenu{
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    /* max-width: 482px; */
+    
+   }
+  div.scrollmenu a{
+    display: inline-block;
+    color: wheat;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  div.scrollmenu a:hover{
+    background-color: #777;
+  }
+  #unit-img{
+    
+    position: relative;
+    top: -24px;
+  }
+  #change{
+    display: none;
+  }
+
+  /* TODO */
+  /* .active-link{
+    background-color: #777;
+  } */
+    </style>  
   </head>
   <body>
     <!-- navbar -->
@@ -86,7 +111,8 @@
   
 
  -->
- <div class="main container">
+ <br>
+ <div class="container main">
   <h1>Unit Converters</h1>
   <h6 class="text-muted">Default: 3 decimal points</h6>
   <p class="form-inline">
@@ -102,12 +128,24 @@
       <option value="8">8 d.p</option>
       <option value="9">9 d.p</option>
       <option value="10">10 d.p</option>
-    </select> <span class="success mr-1 text-muted">Change:</span>
-    <span id="empty" class="mr-1"></span>d.p
+    </select> 
+    <div id="change">
+      <span class="success mr-1 text-muted">Change:</span>
+      <span id="empty" class="mr-1"></span>
+    </div>
   </p>
   <hr>
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
+  <div class="scrollmenu">
+    <a href="#" class="active-link link" data-target="area">Area</a>
+    <a href="#" class="link" data-target="length">Length</a>
+    <a href="#" class="link" data-target="temperature">Temperature</a>
+    <a href="#" class="link" data-target="volume">Volume</a>
+    <a href="#" class="link" data-target="mass">Mass</a>
+    <a href="#" class="link" data-target="data">Data</a>
+  </div>
+  <br>
+  <img src="./img/unitconverter.jpg" alt="Unit Converters" id="unit-img" class="img-fluid">
+   
       <div id="temperature" class="cell">
         <h5 id="center">Temperature</h5>
         <form class="form-inline">
@@ -129,9 +167,9 @@
           </select>
           <input class="form-control mr-1" type="number" name="number2" id="number2" class="number" value="1" disabled><span id="temp2" class="success"></span>
         </form>
-      </div>
+
     </div>
-    <div class="col-sm-12 col-md-6">
+  
       <div id="area" class="cell">
         <h5 id="center">Area</h5>
         <form class="form-inline">
@@ -161,9 +199,9 @@
           </select>
           <input class="form-control mr-1" type="number" name="number4" id="number4" class="number" value="1" disabled min="0"><span id="a2" class="success"></span>
         </form>
-      </div>
+  
     </div>
-    <div class="col-sm-12 col-md-6">
+    
       <div id="length" class="cell">
         <h5 id="center">Length</h5>
         <form class="form-inline">
@@ -197,8 +235,8 @@
           </select>
           <input class="form-control mr-1" type="number" name="number6" id="number6" class="number" value="1" disabled min="0"><span id="l2" class="success"></span>
         </form>
-      </div>
-    </div><div class="col-sm-12 col-md-6">
+  
+    </div>
       <div id="volume" class="cell">
         <h5 id="center">Volume</h5>
         <form class="form-inline">
@@ -208,7 +246,7 @@
             <option value="galUK">Gallon (UK)</option>
             <option value="l">Litre (l)</option>
             <option value="ml">Millilitre (ml)</option>
-            <option value="cc">Cubic centimetre (cc) (cm&sup3;)</option>
+            <option value="cc">Cubic centimetre (cm&sup3;)</option>
             <option value="m">Cubic metre (m&sup3;)</option>
             <option value="in">Cubic inch (in&sup3;)</option>
             <option value="ft">Cubic foot (ft&sup3;)</option>
@@ -223,17 +261,17 @@
             <option value="galUK">Gallon (UK)</option>
             <option value="l">Litre (l)</option>
             <option value="ml">Millilitre (ml)</option>
-            <option value="cc">Cubic centimetre (cc) (cm&sup3;)</option>
+            <option value="cc">Cubic centimetre (cm&sup3;)</option>
             <option value="m">Cubic metre (m&sup3;)</option>
             <option value="in">Cubic inch (in&sup3;)</option>
             <option value="ft">Cubic foot (ft&sup3;)</option>
           </select>
           <input class="form-control mr-1" type="number" name="number8" id="number8" class="number" value="1" disabled min="0"><span id="v2" class="success"></span>
         </form>
-      </div>
+    
       
     </div>
-    <div class="col-sm-12 col-md-6">
+  
       <div id="mass" class="cell">
         <h5 id="center">Mass</h5>
         <form class="form-inline">
@@ -263,10 +301,10 @@
           </select>
           <input class="form-control mr-1" type="number" name="number10" id="number10" class="number" value="1" disabled min="0"><span id="m2" class="success"></span>
         </form>
-      </div>
+ 
       
     </div>
-    <div class="col-sm-12 col-md-6">
+   
       <div id="data" class="cell">
         <h5 id="center">Data</h5>
         <form class="form-inline">
@@ -294,24 +332,17 @@
           </select>
           <input class="form-control mr-1" type="number" name="number12" id="number12" class="number" value="1" disabled min="0"><span id="d2" class="success"></span>
         </form>
-      </div>
-    </div>
+     
+  
   </div>
 
-  <hr>
-  <hr>
-  <hr>
-  <hr>
-  <hr>
-  <p class="text-center text-muted">Use Your Code For Good</p>
-  
 </div>
 
     <!-- link to header.js (navbar). Do not remove -->
     <script src="header.js"></script>
 
     <!-- link to your app js file -->
-    <script src="./UnitConverter.js"></script>
+    <script src="./unitconverter.js"></script>
 
     <!-- bootstrap dependencies -->
     <script
@@ -329,5 +360,59 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <script>
+
+      let btns = document.querySelectorAll('.link');
+      btns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          
+          target = btn.dataset.target;
+          if (target === 'area') {
+            document.querySelector('#area').style.display = "block";
+            document.querySelector('#temperature').style.display = "none";
+            document.querySelector('#length').style.display = "none";
+            document.querySelector('#volume').style.display = "none";
+            document.querySelector('#mass').style.display = "none";
+            document.querySelector('#data').style.display = "none";
+          } else if (target === 'temperature') {
+            document.querySelector('#temperature').style.display = "block";
+            document.querySelector('#area').style.display = "none";
+            document.querySelector('#length').style.display = "none";
+            document.querySelector('#volume').style.display = "none";
+            document.querySelector('#mass').style.display = "none";
+            document.querySelector('#data').style.display = "none";
+          } else if (target === 'length') {
+            document.querySelector('#length').style.display = "block";
+            document.querySelector('#temperature').style.display = "none";
+            document.querySelector('#area').style.display = "none";
+            document.querySelector('#volume').style.display = "none";
+            document.querySelector('#mass').style.display = "none";
+            document.querySelector('#data').style.display = "none";
+          } else if (target === 'volume') {
+            document.querySelector('#volume').style.display = "block";
+            document.querySelector('#temperature').style.display = "none";
+            document.querySelector('#length').style.display = "none";
+            document.querySelector('#area').style.display = "none";
+            document.querySelector('#mass').style.display = "none";
+            document.querySelector('#data').style.display = "none";
+
+          } else if (target === 'data') {
+            document.querySelector('#data').style.display = "block";
+            document.querySelector('#temperature').style.display = "none";
+            document.querySelector('#length').style.display = "none";
+            document.querySelector('#volume').style.display = "none";
+            document.querySelector('#mass').style.display = "none";
+            document.querySelector('#area').style.display = "none";
+          } else if (target === 'mass') {
+            document.querySelector('#mass').style.display = "block";
+            document.querySelector('#temperature').style.display = "none";
+            document.querySelector('#length').style.display = "none";
+            document.querySelector('#volume').style.display = "none";
+            document.querySelector('#area').style.display = "none";
+            document.querySelector('#data').style.display = "none";
+          } 
+        })
+      })
+    </script>
   </body>
 </html>

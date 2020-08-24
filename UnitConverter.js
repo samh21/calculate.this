@@ -80,7 +80,7 @@ document.querySelector('#number11').addEventListener('click', data);
 /*
   -- Function to:
   -- Change decimal point of each select field,
-  -- To 1, 2 ,3, 4, 5and 6 respectively.
+  -- from 1 to 6 respectively.
 
 */
 function point() {

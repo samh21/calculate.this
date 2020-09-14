@@ -42,6 +42,7 @@ class Header extends HTMLElement {
               <a class="dropdown-item" href="takehomesalary.html">Take Home Pay</a>
               <a class="dropdown-item" href="compoundinterest.html">Compound Interest</a>
               <a class="dropdown-item" href="unitconverter.html">Unit Converters</a>
+              <a class="dropdown-item" href="bugdet.html">Bugdet Calculator</a>
               <a class="dropdown-item" href="#">Your Calculator Here....</a>
             </div>
           </li>

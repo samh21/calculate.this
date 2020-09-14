@@ -17,10 +17,11 @@
 
     body {
       background: lightgray;
+      
     }
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
+    .main {
+      max-width: 480px !important;
+      
     }
     .box {
       width: 152px;
@@ -42,13 +43,12 @@
       text-align: right;
       width: 140px;
     }
-    .data {
+    /* .data {
       float: right;
-    }
+    } */
     button, #generate-table, .print-table {
-      position: relative;
-      top: 10px;
-      left: 100px;
+      margin-top: 10px;
+      margin-left: 80px;
     }
 
     li {
@@ -94,8 +94,8 @@
 
  -->
  <br>
-  <div class="container">
-    <h1 class="">Bugdet Calculator+</h1>
+  <div class="container main">
+    <h2 class="center-align">Bugdet Calculator+</h2>
     <p style="color: rosybrown;" id="expense-tracker">"click on expenses to delete"</p>
     <h6 class="text-secondary" style="font-weight: bolder;">Amout Left To Spend: $ <span style="color: green;" id="bugdet-left">0</span><span id="result" style="color: black;"></span></h6>
     <div class="box" id="income">
@@ -112,20 +112,21 @@
       <input type="number" placeholder="Amount" class="data" id="data-number"  onkeypress="if(this.value.length==12) return false;">
     </div>
 
-     <button class="btn btn-danger">Add Expense</button>
+     <button class="btn btn-danger" id="add-expense">Add Expense</button>
      <hr>
      <div id="show-expense">
-      <ul>
+      <ul class="ul-expense">
         <li>
           <span style="color: green; font-weight: bolder;">- Income:</span>
            <input type="number" id="total-income-text" onkeypress="if(this.value.length==12) return false;">
          </li>
       </ul>
+     </div>
       <p id="generate-table" class="btn btn-success">Generate Table</p>
       <hr>
       <div id="show-table">
 
-      </div>
+    
      </div>
 
      <p class="btn btn-secondary print-table">Print Table</p>

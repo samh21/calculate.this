@@ -47,7 +47,7 @@ totalIncomeText.focus()
 
 // Listen to input change and update the required field 
 
-ul.addEventListener('keyup', (e) => {
+document.querySelector('.ul-expense').addEventListener('keyup', (e) => {
   let total = parseFloat(document.querySelector('#total-expense-container').innerText)
   if(e.target.className === 'total-expense-text') {
     total = 0
@@ -85,13 +85,13 @@ ul.addEventListener('keyup', (e) => {
 
 // Remove expense onclick
 
-ul.addEventListener('click', (e) => {
+document.querySelector('.ul-expense').addEventListener('click', (e) => {
   let total = parseFloat(document.querySelector('#total-expense-container').innerText)
   if(e.target.className === 'span-expense-text') {
   
     let c = confirm(`Are you sure you want to delete \n ${e.target.innerText}`)
     if (c == true) {
-      ul.removeChild(e.target.parentElement)
+      document.querySelector('.ul-expense').removeChild(e.target.parentElement)
     }
   
     total = 0
@@ -124,8 +124,8 @@ ul.addEventListener('click', (e) => {
 })
 
 // Check if Button is clicked to add an expense
-
-button.addEventListener('click', function()  {
+let addExpense = document.querySelector('#add-expense')
+addExpense.addEventListener('click', function()  {
   let text = document.querySelector('#data-text')
   let number = document.querySelector('#data-number')
   let li = document.createElement('li')
@@ -144,10 +144,13 @@ button.addEventListener('click', function()  {
   
   if (text.value !== '' && number.value !== '' && number.value !== 'NaN')
   {
+    let ul = document.querySelector('.ul-expense')
     input.value = number.value
     li.appendChild(span)
     li.appendChild(input)
     ul.appendChild(li)
+    let showExpense = document.querySelector('#show-expense')
+    showExpense.appendChild(ul)
     text.value = ''
     number.value = ''
     let expense =  parseFloat(document.querySelector('#total-expense-container').innerText)
@@ -334,4 +337,3 @@ print.addEventListener('click', () => {
   newWin.close()
 })
   
-

@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="author" content="Samuel Torimiro">
-  <meta name="description" content="A utility calculator to calculate bugdet">
+  <meta name="description" content="A utility calculator to calculate your bugdet details">
   <meta name="keywords" content="Budget Calculator">
   <link
       rel="stylesheet"
@@ -27,7 +27,7 @@
       width: 152px;
       height: 100px;
       margin: 10px;
-      float: left;
+      
     }
     #income {
       background: rgb(21, 133, 21);
@@ -47,8 +47,7 @@
       float: right;
     } */
     button, #generate-table, .print-table {
-      margin-top: 10px;
-      margin-left: 80px;
+      margin: 10px;
     }
 
     li {
@@ -58,8 +57,8 @@
     }
     .span-expense-text {
       cursor: pointer;
-      /* width: 5px;
-      overflow-wrap: normal; */
+      width: 135px;
+      overflow-wrap: normal;
     }
     .span-expense-text:hover {
       text-decoration: line-through;
@@ -78,58 +77,89 @@
       color: teal !important;
       font-weight: bolder;
     }
-
+    .model {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .model1 {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+    .li-expense {
+      display: flex;
+      flex-wrap: wrap;
+     }
+     #total-expense-container{
+       word-break: break-all;
+     }
 
     
   </style>
 </head>
 <body>
-<!-- navbar -->
-    <main-header></main-header>
+   <!-- navbar -->
+   <main-header></main-header>
 
-    <!-- 
+   <!-- 
 
-  Markup for your caculator app goes here. Please use Bootstrap 5 alpa.
-  
+ Markup for your caculator app goes here. Please use Bootstrap 5 alpa.
+ 
 
- -->
- <br>
+-->
+<br>
+
   <div class="container main">
     <h2 class="center-align">Bugdet Calculator+</h2>
     <p style="color: rosybrown;" id="expense-tracker">"click on expenses to delete"</p>
-    <h6 class="text-secondary" style="font-weight: bolder;">Amout Left To Spend: $ <span style="color: green;" id="bugdet-left">0</span><span id="result" style="color: black;"></span></h6>
-    <div class="box" id="income">
-      <p style="color: wheat;">Income</p>
-      <p style="color: lime;">$ <span id="total-income-container" style="color: wheat;">0</span></p>
+    <h6 class="text-secondary center-align" style="font-weight: bolder;">Amout Left To Spend: $ <span style="color: green;" id="bugdet-left">0</span><span id="result" style="color: black;"></span></h6>
+    <div class="model">
+      <div class="box" id="income">
+        <p style="color: wheat;">Income</p>
+        <p style="color: lime;">$ <span id="total-income-container" style="color: wheat;">0</span></p>
+      </div>
+      <div class="box" id="expenses">
+        <p style="color: wheat;">Expenses</p>
+        <p style="color: tomato;">$ <span id="total-expense-container" style="color: wheat;">0</span></p>
+      </div>
     </div>
-    <div class="box" id="expenses">
-      <p style="color: wheat;">Expenses</p>
-      <p style="color: tomato;">$ <span id="total-expense-container" style="color: wheat;">0</span></p>
-    </div>
+    
     <br>
-    <div>
-      <input type="text" placeholder="Expense" id="data-text">
-      <input type="number" placeholder="Amount" class="data" id="data-number"  onkeypress="if(this.value.length==12) return false;">
+    <div class="model1">
+      <div>
+        <input type="text" placeholder="Expense title" id="data-text">
+      </div>
+      <div>
+        <input type="number" placeholder="Amount" class="data" id="data-number"  onkeypress="if(this.value.length==12) return false;">
+      </div>
+      
     </div>
 
-     <button class="btn btn-danger" id="add-expense">Add Expense</button>
+     <button class="btn btn-danger container" id="add-expense">Add Expense</button>
      <hr>
      <div id="show-expense">
       <ul class="ul-expense">
-        <li>
-          <span style="color: green; font-weight: bolder;">- Income:</span>
-           <input type="number" id="total-income-text" onkeypress="if(this.value.length==12) return false;">
+        <li class="li-expense">
+
+            <span style="color: green; font-weight: bolder;">- Income:</span>
+
+
+            <input type="number" id="total-income-text" onkeypress="if(this.value.length==12) return false;">
+
+          
+          
          </li>
       </ul>
      </div>
-      <p id="generate-table" class="btn btn-success">Generate Table</p>
+      <p id="generate-table" class="btn btn-success container">Generate Table</p>
       <hr>
       <div id="show-table">
 
     
      </div>
 
-     <p class="btn btn-secondary print-table">Print Table</p>
+     <p class="btn btn-secondary print-table container">Print Table</p>
      
      <hr>
      <p class="text-muted">&copy; Bugdet calculator v1</p>

@@ -51,9 +51,9 @@ document.querySelector('.ul-expense').addEventListener('keyup', (e) => {
   let total = parseFloat(document.querySelector('#total-expense-container').innerText)
   if(e.target.className === 'total-expense-text') {
     total = 0
-    if(e.target.value.length == 12) {
-      return false
-    }
+    // if(e.target.value.length == 12) {
+    //   alert('Your text string is too long for this field \n It\'s is adviced you shorting it')
+    // }
     let inputItems = document.querySelectorAll('input')
     inputItems.forEach(items => {
       if (items.value.length != 0) {
@@ -223,6 +223,9 @@ generateTable.addEventListener('click', () => {
   th1.innerText = 'Details'
   th2.innerText = 'Expenses'
   th3.innerText = 'Income'
+  th1.className = 'center-align'
+  th2.className = 'center-align'
+  th3.className = 'center-align'
   tr1.appendChild(th1)
   tr1.appendChild(th2)
   tr1.appendChild(th3)

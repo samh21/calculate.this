@@ -28,52 +28,62 @@
             </div>
 
             <section class="container p-3">
-                <p class=small>Complete the sections below then click anywhere outside of the input to calculate.
-                    Result
-                    will update
-                    whenever you change any of the inputs.</p>
+                <p class=small>Complete the sections below then click Submit Query to calculate your journey cost - you
+                    can use
+                    the adjustment arrows to see live changes to your calculation.
+                </p>
             </section>
 
             <div class="mx-auto">
                 <form id="calculator-form">
                     <div class="form-group">
 
-                        <label for="distance">Distance:</label>
+                        <label for="distance">Distance <em>(miles)</em></label>
                         <div class="input-group mb-3">
                             <input type="number" id="distance" class="form-control">
-                            <div class="input-group-text">M</div>
+                            <div class="input-group-append">
+                                <div class="input-group-text">M</div>
+                            </div>
                         </div>
 
-                        <label for="fuel-price">Fuel Price / Litre:</label>
+                        <label for="fuel-price">Fuel Price / Litre <em>(pence)</em></label>
                         <div class="input-group mb-3">
                             <input type="number" id="fuel-price" class="form-control">
                             <div class="input-group-append">
                                 <div class="input-group-text">p</div>
                             </div>
                         </div>
+                    </div>
 
-                        <label for="vehicle-mpg">Vehicle MPG:</label>
-                        <div class="input-group mb-3">
-                            <input type="number" id="vehicle-mpg" class="form-control">
-                            <div class="input-group-append">
-                            </div>
-                        </div>
-                        <!-- <span id="button">
+                    <label for="vehicle-mpg">Vehicle MPG <em>(UK average is 36-43)</em></label>
+                    <div class="input-group mb-3">
+                        <input type="number" id="vehicle-mpg" class="form-control">
+                    </div>
+                    <!-- <span id="button">
                             <input type="submit" class="btn btn-block btn-secondary" value="Submit">
                         </span> -->
+                    <span id='submit'>
+                        <input id='submitButton' style='margin-top: 2rem; margin-bottom: .5rem; height: 2.3rem'
+                            type="submit" class="btn btn-sm btn-secondary btn-block" value="Submit" />
+                    </span>
+                    <!-- <button class="btn btn-sm btn-secondary btn-block" id='submit'
+                        style='margin-top: 2rem; margin-bottom: .5rem; height: 2.3rem'>
+                        Submit
+                    </button> -->
 
-                    </div>
-                </form>
-                <div id="result" class="mb-4">
-                    <!-- <hr />
+
+            </div>
+            </form>
+            <div id="result" class="mb-4">
+                <!-- <hr />
                     <h3 id="cost"></h3>
                     <hr /> -->
-                </div>
             </div>
-            <!--form-group-->
-            <!--calculator-form-->
         </div>
-        <!--mx-auto p-4-->
+        <!--form-group-->
+        <!--calculator-form-->
+    </div>
+    <!--mx-auto p-4-->
     </div>
 
     <!-- link to header.js (navbar). Do not remove -->
